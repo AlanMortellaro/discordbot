@@ -40,16 +40,15 @@ client.on('ready', () => {
   console.log('[~~~] Bot is ready !')
 });
 
-client.on('guildCreate', (guild) => {
-  if (!fs.existsSync(guild.id)) {
-    fs.readFile('config/servers/template.json', 'utf8', function (err,data) {
-      if (err) return console.log('[err] ' + err)
-      fs.writeFile('config/servers/' + guild.id + '.json', data, function(err) {
-        if (err) return console.log('[err] ' + err)
-        console.log("[+++] Bot joined '"+guild.name+"' <"+guild.id+">")
-      });
-    });
-  }
+client.on("guildMembersChunk", (member, guild) => {
+    //tes trucs
+    console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
+});
+
+client.on("guildCreate", guild => {
+  // This event triggers when the bot joins a guild.
+  console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
+  client.user.setGame(`on ${client.guilds.size} servers`);
 });
 
 client.on('message', message => {
