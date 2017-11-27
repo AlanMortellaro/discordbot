@@ -1,7 +1,7 @@
 {
   "_comment": "This settings file will contain all settings of the bot",
   "appdetails": {
-    "secret": "MzgwODA4MTYwODIwMDY4MzUy.DPIu2w.min46OWCpEzFJ3aIZpRdskTWJLQ",
+    "secret": "YOUR_BOT_DISCORD_TOKEN",
     "commandStart": "!"
   }
 }

@@ -9,6 +9,6 @@
     "users": {
         "rolename": "permission"
     },
-    "default": ["ping", "info", "count", "help", "debug", "tg"]
+    "default": ["ping", "info", "count", "help", "debug", "tg", "geo"]
   }
 }
